@@ -11,10 +11,10 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserProfileComponent } from './sections/user-profile/user-profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
-const components = [UserProfileComponent];
+const components = [UserProfileComponent, UserProfileComponent];
 
 @NgModule({
   declarations: [AppComponent, components],

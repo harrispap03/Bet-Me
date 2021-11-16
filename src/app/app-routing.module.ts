@@ -1,27 +1,28 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserProfileComponent } from './sections/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
     path: 'user-profile',
-    component: UserProfileComponent
+    component: UserProfileComponent,
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () =>
+      import('./home/home.module').then((m) => m.HomePageModule),
   },
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
